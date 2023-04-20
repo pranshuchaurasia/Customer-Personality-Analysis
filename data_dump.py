@@ -17,5 +17,5 @@ if __name__=="__main__":
     json_record=list(json.loads(df.T.to_json()).values())
     print(json_record[0])
 
-    #inser json record into mongo db
+    #insert json record into mongo db
     client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
