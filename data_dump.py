@@ -1,9 +1,11 @@
 import pymongo
 import pandas as pd
 import json
+from analysis.config import env_var
+
 
 # Provide the mongodb localhost url to connect python to mongodb.
-client = pymongo.MongoClient("mongodb://localhost:27017/neurolabDB")
+client = pymongo.MongoClient(env_var.mongo_db_url)
 
 DATA_FILE_PATH="/config/workspace/marketing_campaign.csv"
 DATABASE_NAME="customer_data"
